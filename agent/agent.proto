@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package agent;
+
+option go_package = "agentpb/";
+
+service AgentService {
+    rpc ExecuteFunction (RequestMessage) returns (ResponseMessage);
+}
+
+message RequestMessage {
+    string function_name = 1;
+    string payload = 2;
+}
+
+message ResponseMessage {
+    string result = 1;
+}
+
